@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update design</title>
+</head>
+<body>
+<form action="#" th:action="@{/design-update}" th:object="${design}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="designName">Design name</label>
+    <input type="text" th:field="*{designName}" id="designName" placeholder="Design name">
+    <br/>
+    <label for="pathToDesign">Path to design</label>
+    <input type="text" th:field="*{pathToDesign}" id="pathToDesign" placeholder="Path to design">
+    <br/>
+    <input type="submit" value="Update design">
+</form>
+</body>
+</html>

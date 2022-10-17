@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Musical album</title>
+</head>
+<body>
+<div th:switch="${albums}">
+    <h2 th:case="null">No albums found!</h2>
+    <div th:case="*">
+        <h2>Musical albums</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Album name</th>
+                <th>Amount of songs</th>
+                <th>Genre id</th>
+                <th>Design id</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="album : ${albums}">
+                <td th:text="${album.id}"></td>
+                <td th:text="${album.albumName}"></td>
+                <td th:text="${album.songsAmount}"></td>
+                <td th:text="${album.designId}"></td>
+                <td th:text="${album.genreId}"></td>
+                <td><a th:href="@{musical-album-update/{id}(id=${album.id})}">Edit</a></td>
+                <td><a th:href="@{musical-album-delete/{id}(id=${album.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/musical-album-create">Create musical album</a></p>
+</div>
+
+
+<h4>Related entity</h4>
+<p><a href="/designs">Design</a></p>
+<p><a href="/genre">Genre</a></p>
+<h4><p><a href="/home">Home page</a></p>
+</h4>
+</body>
+</html>

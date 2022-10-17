@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Instrument possesion</title>
+</head>
+<body>
+<div th:switch="${instrumentPosessions}">
+    <h2 th:case="null">No instrument posessions found!</h2>
+    <div th:case="*">
+        <h2>Instrument posessions</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Instrument name</th>
+                <th>Level of playing</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="posession : ${instrumentPosessions}">
+                <td th:text="${posession.id}"></td>
+                <td th:text="${posession.instrumentName}"></td>
+                <td th:text="${posession.levelOfPlaying}"></td>
+                <td><a th:href="@{instrument-posession-update/{id}(id=${posession.id})}">Edit</a></td>
+                <td><a th:href="@{instrument-posession-delete/{id}(id=${posession.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/instrument-posession-create">Create instrument posession</a></p>
+</div>
+</body>
+<h4><p><a href="/home">Home page</a></p>
+</h4>
+</html>

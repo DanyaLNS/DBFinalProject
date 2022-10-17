@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update song</title>
+</head>
+<body>
+<form action="#" th:action="@{/song-update}" th:object="${song}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="songName">Song name</label>
+    <input type="text" th:field="*{songName}" id="songName" placeholder="Song Name">
+    <br/>
+
+    <label for="authorId">Author id</label>
+    <input type="number" th:field="*{authorId}" id="authorId" placeholder="Author ID">
+    <br/>
+
+    <label for="musicId">Music id</label>
+    <input type="number" th:field="*{musicId}" id="musicId" placeholder="Music ID">
+    <br/>
+
+    <label for="lyricsId">Lyrics id</label>
+    <input type="number" th:field="*{lyricsId}" id="lyricsId" placeholder="Lyrics ID">
+    <br/>
+
+    <label for="musicalAlbumId">Musical album ID</label>
+    <input type="number" th:field="*{musicalAlbumId}" id="musicalAlbumId" placeholder="Musical album ID">
+    <br/>
+    <input type="submit" value="Update music">
+
+</form>
+</body>
+</html>

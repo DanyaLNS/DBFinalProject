@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create music</title>
+</head>
+<body>
+<form action="#" th:action="@{/music-create}" th:object="${music}" method="post">
+    <label for="tempo">Tempo</label>
+    <input type="number" th:field="*{tempo}" id="tempo" placeholder="Tempo">
+
+    <label for="tonality">Tonality</label>
+    <input type="text" th:field="*{tonality}" id="tonality" placeholder="Tonality">
+
+    <label for="pathToMusic">Path to Music</label>
+    <input type="text" th:field="*{pathToMusic}" id="pathToMusic" placeholder="Path to Music">
+
+    <input type="submit" value="Create music">
+</form>
+</body>
+</html>

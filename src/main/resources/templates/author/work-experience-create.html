@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create work experience</title>
+</head>
+<body>
+<form action="#" th:action="@{/work-experience-create}" th:object="${experience}" method="post">
+    <label for="specialization">Specialization</label>
+    <input type="text" th:field="*{specialization}" id="specialization" placeholder="Specialization">
+
+    <label for="placeOfWork">Place of work</label>
+    <input type="text" th:field="*{placeOfWork}" id="placeOfWork" placeholder="Place of work">
+
+    <label for="description">Description</label>
+    <input type="text" th:field="*{description}" id="description" placeholder="Description">
+
+    <input type="submit" value="Create design">
+</form>
+</body>
+</html>

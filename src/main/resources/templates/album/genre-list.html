@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Genres</title>
+</head>
+<body>
+<div th:switch="${genres}">
+    <h2 th:case="null">No genres found!</h2>
+    <div th:case="*">
+        <h2>Designs</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Style</th>
+                <th>Genre</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="genre : ${genres}">
+                <td th:text="${genre.id}"></td>
+                <td th:text="${genre.style}"></td>
+                <td th:text="${genre.genreName}"></td>
+                <td><a th:href="@{genre-update/{id}(id=${genre.id})}">Edit</a></td>
+                <td><a th:href="@{genre-delete/{id}(id=${genre.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/genre-create">Create genre</a></p>
+</div>
+</body>
+<h4><p><a href="/home">Home page</a></p>
+</h4>
+</html>

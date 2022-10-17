@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update instrument posession</title>
+</head>
+<body>
+<form action="#" th:action="@{/instrument-posession-update}" th:object="${posession}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="instrumentName">Instrument name</label>
+    <input type="text" th:field="*{instrumentName}" id="instrumentName" placeholder="Instrument name">
+    <br/>
+    <label for="levelOfPlaying">Level of playing</label>
+    <input type="text" th:field="*{levelOfPlaying}" id="levelOfPlaying" placeholder="Level of playing">
+    <br/>
+    <input type="submit" value="Update level of playing">
+</form>
+</body>
+</html>

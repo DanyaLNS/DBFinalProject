@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create instrument posession</title>
+</head>
+<body>
+<form action="#" th:action="@{/instrument-posession-create}" th:object="${instrumentPosession}" method="post">
+    <label for="instrumentName">Instrument name</label>
+    <input type="text" th:field="*{instrumentName}" id="instrumentName" placeholder="Instrument name">
+
+    <label for="levelOfPlaying">Level of playing</label>
+    <input type="text" th:field="*{levelOfPlaying}" id="levelOfPlaying" placeholder="Level of playing">
+
+    <input type="submit" value="Create instrument posession">
+</form>
+</body>
+</html>

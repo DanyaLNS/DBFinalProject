@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update music</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/music-update}" th:object="${music}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="tempo">Tempo</label>
+    <input type="int" th:field="*{tempo}" id="tempo" placeholder="Tempo">
+    <br/>
+    <label for="tonality">Tonality</label>
+    <input type="text" th:field="*{tonality}" id="tonality" placeholder="Tonality">
+    <br/>
+    <label for="pathToMusic">Path to music</label>
+    <input type="text" th:field="*{pathToMusic}" id="pathToMusic" placeholder="Path to music">
+    <br/>
+    <input type="submit" value="Update music">
+</form>
+</body>
+</html>

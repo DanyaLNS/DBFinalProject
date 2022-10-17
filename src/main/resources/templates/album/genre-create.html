@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create style</title>
+</head>
+<body>
+<form action="#" th:action="@{/genre-create}" th:object="${genre}" method="post">
+    <label for="style">Style</label>
+    <input type="text" th:field="*{style}" id="style" placeholder="Style">
+
+    <label for="genreName">Genre</label>
+    <input type="text" th:field="*{genreName}" id="genreName" placeholder="Genre">
+
+    <input type="submit" value="Create genre">
+</form>
+</body>
+</html>

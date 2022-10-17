@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create song</title>
+</head>
+<body>
+<form action="#" th:action="@{/song-create}" th:object="${song}" method="post">
+    <label for="songName">Song name</label>
+    <input type="text" th:field="*{songName}" id="songName" placeholder="Song Name">
+
+    <label for="authorId">Author id</label>
+    <input type="number" th:field="*{authorId}" id="authorId" placeholder="Author ID">
+
+    <label for="musicId">Music id</label>
+    <input type="number" th:field="*{musicId}" id="musicId" placeholder="Music ID">
+
+    <label for="lyricsId">Lyrics id</label>
+    <input type="number" th:field="*{lyricsId}" id="lyricsId" placeholder="Lyrics ID">
+
+    <label for="musicalAlbumId">Musical album ID</label>
+    <input type="number" th:field="*{musicalAlbumId}" id="musicalAlbumId" placeholder="Musical album ID">
+
+    <input type="submit" value="Create song">
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create design</title>
+</head>
+<body>
+<form action="#" th:action="@{/design-create}" th:object="${design}" method="post">
+    <label for="designName">Design name</label>
+    <input type="text" th:field="*{designName}" id="designName" placeholder="Design Name">
+
+    <label for="pathToDesign">Path to design</label>
+    <input type="text" th:field="*{pathToDesign}" id="pathToDesign" placeholder="Path to design">
+
+    <input type="submit" value="Create design">
+</form>
+</body>
+</html>

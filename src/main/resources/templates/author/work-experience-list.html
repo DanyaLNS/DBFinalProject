@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Work experience</title>
+</head>
+<body>
+<div th:switch="${experiences}">
+    <h2 th:case="null">No experiences found!</h2>
+    <div th:case="*">
+        <h2>Experiences</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Specialization</th>
+                <th>Place of work</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="experience : ${experiences}">
+                <td th:text="${experience.id}"></td>
+                <td th:text="${experience.specialization}"></td>
+                <td th:text="${experience.placeOfWork}"></td>
+                <td th:text="${experience.description}"></td>
+                <td><a th:href="@{work-experience-update/{id}(id=${experience.id})}">Edit</a></td>
+                <td><a th:href="@{work-experience-delete/{id}(id=${experience.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/work-experience-create">Create work experience</a></p>
+</div>
+<h4><p><a href="/home">Home page</a></p>
+</h4>
+</body>
+</html>

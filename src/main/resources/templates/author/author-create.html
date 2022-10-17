@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create author</title>
+</head>
+<body>
+<form action="#" th:action="@{/author-create}" th:object="${author}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+
+    <label for="instrumentPosessionId">Instrument posession id</label>
+    <input type="int" th:field="*{instrumentPosessionId}" id="instrumentPosessionId" placeholder="Instrument posession">
+
+    <label for="workExperienceId">Work experience id</label>
+    <input type="int" th:field="*{workExperienceId}" id="workExperienceId" placeholder="Work experience">
+
+    <input type="submit" value="Create author">
+</form>
+</body>
+</html>

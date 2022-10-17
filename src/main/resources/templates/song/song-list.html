@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Songs</title>
+</head>
+<body>
+<div th:switch="${songs}">
+    <h2 th:case="null">No songs found!</h2>
+    <div th:case="*">
+        <h2>Songs</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Song name</th>
+                <th>Author id</th>
+                <th>Music id</th>
+                <th>Lyrics id</th>
+                <th>Musical album id</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="song : ${songs}">
+                <td th:text="${song.id}"></td>
+                <td th:text="${song.songName}"></td>
+                <td th:text="${song.authorId}"></td>
+                <td th:text="${song.musicId}"></td>
+                <td th:text="${song.lyricsId}"></td>
+                <td th:text="${song.musicalAlbumId}"></td>
+                <td><a th:href="@{song-update/{id}(id=${song.id})}">Edit</a></td>
+                <td><a th:href="@{song-delete/{id}(id=${song.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/song-create">Create song</a></p>
+</div>
+
+<h4>Related entity</h4>
+<p><a href="/music">Music</a></p>
+<p><a href="/lyrics">Lyrics</a></p>
+<h4><p><a href="/home">Home page</a></p>
+</h4>
+
+</body>
+</html>

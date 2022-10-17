@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update lyrics</title>
+</head>
+<body>
+<form action="#" th:action="@{/lyrics-update}" th:object="${lyrics}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="concept">Concept</label>
+    <input type="text" th:field="*{concept}" id="concept" placeholder="Concept">
+    <br/>
+    <label for="text">Text</label>
+    <input type="text" th:field="*{text}" id="text" placeholder="Text">
+    <br/>
+    <input type="submit" value="Update lyrics">
+</form>
+</body>
+</html>

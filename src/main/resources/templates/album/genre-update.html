@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update genre</title>
+</head>
+<body>
+<form action="#" th:action="@{/genre-update}" th:object="${genre}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="style">Style</label>
+    <input type="text" th:field="*{style}" id="style" placeholder="Style">
+    <br/>
+    <label for="genreName">Genre</label>
+    <input type="text" th:field="*{genreName}" id="genreName" placeholder="genreName">
+    <br/>
+    <input type="submit" value="Update genre">
+</form>
+</body>
+</html>
